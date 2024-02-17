@@ -76,11 +76,11 @@ public class Functionalfellows {
             j++;
             Integer num = random.nextInt(99999);//here num is an integer object
             array.remove(num);       // we are remove num for ensure the adding in sets
-            array.add((Integer) 100000);// this is ensure that initial set length is 100000
+            array.add(100000);// this is ensure that initial set length is 100000
             long start = System.nanoTime();
             array.add(num);
             long end = System.nanoTime();
-            array.remove((Integer) 100000);
+            array.remove(100000);
             sum= sum+end-start;
         }
         long ave = sum/100;
@@ -147,7 +147,7 @@ public class Functionalfellows {
         Random random = new Random();
         while (j<100){
             j++;
-            Integer num = random.nextInt(99999);//how ever num must be in array because our created array contains all elements between 0-99999 inclusive
+            Integer num = random.nextInt(99999);//however num must be in array because our created array contains all elements between 0-99999 inclusive
             long start = System.nanoTime();
             array.contains(num);
             long end = System.nanoTime();
@@ -229,29 +229,23 @@ class Createlist{
         return array;
     }
     public HashSet<Integer> createHashSet(){
-        HashSet<Integer> array = new HashSet<>(createArrayList()); //first create a arraylist and cast to it into hashset
-        return array;
+        return new HashSet<>(createArrayList());
     }
 
     public LinkedHashSet<Integer> createLinkedHashSet(){
-        LinkedHashSet<Integer> array = new LinkedHashSet<>(createArrayList());
-        return array;
+        return new LinkedHashSet<>(createArrayList());
     }
     public TreeSet<Integer> createTreeSet(){
-        TreeSet<Integer> array = new TreeSet<>(createArrayList());
-        return array;
+        return new TreeSet<>(createArrayList());
     }
     public ArrayDeque<Integer> createArrayDeque(){
-        ArrayDeque<Integer> array = new ArrayDeque<>(createArrayList());
-        return array;
+        return new ArrayDeque<>(createArrayList());
     }
     public LinkedList<Integer> createLinkedList(){
-        LinkedList<Integer> array = new LinkedList<>(createArrayList());
-        return array;
+        return new LinkedList<>(createArrayList());
     }
     public PriorityQueue<Integer> createPriorityQueue(){
-        PriorityQueue<Integer> array = new PriorityQueue<>(createArrayList());
-        return array;
+        return new PriorityQueue<>(createArrayList());
     }
     public HashMap<Integer,Integer> createHashMap(){
         HashMap<Integer,Integer> map = new HashMap<>();
@@ -265,14 +259,12 @@ class Createlist{
         return map;
     }
     public TreeMap<Integer,Integer> createTreeMap(){
-        TreeMap<Integer,Integer> map = new TreeMap<>(createHashMap());      //first create a hashmap and cast to it into treemap
-        return map;
+        return new TreeMap<>(createHashMap());      //first create a hashmap and cast to it into treemap
     }
     public LinkedHashMap<Integer,Integer> createLinkedHashMap(){
-        LinkedHashMap<Integer,Integer> map = new LinkedHashMap<>(createHashMap());
-        return map;
+        return new LinkedHashMap<>(createHashMap());
     }
     /* in this class we create only one collection and map by adding elements . arraylist and hashmap because they store elements in unsorted way,but some of collections
-     and maps are store elements in sorted order thats why we didn't choose them
+     and maps are store elements in sorted order that's why we didn't choose them
      */
 }
